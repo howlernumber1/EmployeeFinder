@@ -2,7 +2,7 @@
 // DEPENDENCIES
 // We need to include the path package to get the correct file path for our html
 // ===============================================================================
-const path = require('path');
+let employeeList = require('../data/employees.js');
 
 
 // ===============================================================================
@@ -14,12 +14,7 @@ module.exports = function(app) {
   // Below code handles when users 'visit' a page.
   // ---------------------------------------------------------------------------
 
-  // If no matching route is found default to home
-  app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname, '../public/home.html'));
+  app.get('/api/employees', function(req, res) {
+    res.json(employeeList)
   });
 };
-
-  app.get('/survey', function(req, res) {
-    res.sendFile(path.join(__dirname, '../public/survey.html'));
-  });
