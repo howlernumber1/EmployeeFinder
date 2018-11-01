@@ -6,6 +6,15 @@
   <title>Employee Finder</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="/js/survey.js" charset="utf-8"></script>
+
 </head>
 
 <body>
@@ -20,13 +29,13 @@
             <label for="inputName">
               <h4>Name (Required)</h4>
             </label><br>
-            <input type="text" class="form-control" aria-describedby="nameHelp" placeholder="" required>
+            <input id="inputName" type="text" class="form-control" aria-describedby="nameHelp" placeholder="" required>
           </div>
           <div class="form-group">
             <label for="imageURL">
               <h4>Link to Photo Image (Required)</h4>
             </label>
-            <input type="url" class="form-control" aria-describedby="imageHelp" placeholder="" required>
+            <input id="inputImg" type="url" class="form-control" aria-describedby="imageHelp" placeholder="" required>
           </div>
           <hr>
           <div class="form-group">
@@ -34,15 +43,15 @@
               <h3><strong>Question 1</strong></h3>
             </label><br>
             <label for="question1">
-              <h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
+              <h4>You feel superior to other people.</h4>
             </label>
-            <select class="form-control" id="question1" required>
+            <select id="quest1" class="form-control" id="question1" required>
               <option value="" selected disabled>Select an Option</option>
-              <option>1 (Strongly Disagree)</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5 (Strongly Agree)</option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
             </select>
           </div>
           <div class="form-group">
@@ -50,15 +59,15 @@
               <h3><strong>Question 2</strong></h3>
             </label><br>
             <label for="question2">
-              <h4>Generally speaking, you rely more on your exprience than your imagination.</h4>
+              <h4>Being organized is more important to you than being adaptable.</h4>
             </label>
-            <select class="form-control" id="question2" required>
+            <select id="quest2" class="form-control" id="question2" required>
               <option value="" selected disabled>Select an Option</option>
-              <option>1 (Strongly Disagree)</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5 (Strongly Agree)</option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
             </select>
           </div>
           <div class="form-group">
@@ -66,15 +75,15 @@
               <h3><strong>Question 3</strong></h3>
             </label><br>
             <label for="question3">
-              <h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
+              <h4>You are usually highly motivated and energetic.</h4>
             </label>
-            <select class="form-control" id="question3" required>
+            <select id="quest3" class="form-control" id="question3" required>
               <option value="" selected disabled>Select an Option</option>
-              <option>1 (Strongly Disagree)</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5 (Strongly Agree)</option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
             </select>
           </div>
           <div class="form-group">
@@ -82,15 +91,15 @@
               <h3><strong>Question 4</strong></h3>
             </label><br>
             <label for="question4">
-              <h4>You rarely do something just out of sheer curiosity.</h4>
+              <h4>Winning a debate matters less to you than making sure no one gets upset.</h4>
             </label>
-            <select class="form-control" id="question4" required>
+            <select id="quest4" class="form-control" id="question4" required>
               <option value="" selected disabled>Select an Option</option>
-              <option>1 (Strongly Disagree)</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5 (Strongly Agree)</option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
             </select>
           </div>
           <div class="form-group">
@@ -98,15 +107,15 @@
               <h3><strong>Question 5</strong></h3>
             </label><br>
             <label for="question5">
-              <h4>People can rarely upset you.</h4>
+              <h4>You often feel as if you have to justify yourself to other people.</h4>
             </label>
-            <select class="form-control" id="question5" required>
+            <select id="quest5" class="form-control" id="question5" required>
               <option value="" selected disabled>Select an Option</option>
-              <option>1 (Strongly Disagree)</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5 (Strongly Agree)</option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
             </select>
           </div>
           <div class="form-group">
@@ -114,15 +123,15 @@
               <h3><strong>Question 6</strong></h3>
             </label><br>
             <label for="question6">
-              <h4>It is often difficult for you to relate to other people's feelings.</h4>
+              <h4>Your home and work environments are quite tidy.</h4>
             </label>
-            <select class="form-control" id="question6" required>
+            <select id="quest6" class="form-control" id="question6" required>
               <option value="" selected disabled>Select an Option</option>
-              <option>1 (Strongly Disagree)</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5 (Strongly Agree)</option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
             </select>
           </div>
           <div class="form-group">
@@ -130,15 +139,15 @@
               <h3><strong>Question 7</strong></h3>
             </label><br>
             <label for="question7">
-              <h4>In a discussion, truth should be more important than people's sensitivities.</h4>
+              <h4>You do not mind being at the center of attention.</h4>
             </label>
-            <select class="form-control" id="question7" required>
+            <select id="quest7" class="form-control" id="question7" required>
               <option value="" selected disabled>Select an Option</option>
-              <option>1 (Strongly Disagree)</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5 (Strongly Agree)</option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
             </select>
           </div>
           <div class="form-group">
@@ -146,15 +155,15 @@
               <h3><strong>Question 8</strong></h3>
             </label><br>
             <label for="question8">
-              <h4>You rarely get carried away by fantasies and ideas.</h4>
+              <h4>You consider yourself more practical than creative.</h4>
             </label>
-            <select class="form-control" id="question8" required>
+            <select id="quest8" class="form-control" id="question8" required>
               <option value="" selected disabled>Select an Option</option>
-              <option>1 (Strongly Disagree)</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5 (Strongly Agree)</option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
             </select>
           </div>
           <div class="form-group">
@@ -162,15 +171,15 @@
               <h3><strong>Question 9</strong></h3>
             </label><br>
             <label for="question9">
-              <h4>You think that everyone's views should be respected regardless of whether they are supported by facts or not.</h4>
+              <h4>People can rarely upset you.</h4>
             </label>
-            <select class="form-control" id="question9" required>
+            <select id="quest9" class="form-control" id="question9" required>
               <option value="" selected disabled>Select an Option</option>
-              <option>1 (Strongly Disagree)</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5 (Strongly Agree)</option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
             </select>
           </div>
           <div class="form-group">
@@ -178,19 +187,18 @@
               <h3><strong>Question 10</strong></h3>
             </label><br>
             <label for="question10">
-              <h4>You feel more energetic after spending time with a group of people.</h4>
+              <h4>Your travel plans are usually well thought out.</h4>
             </label>
-            <select class="form-control" id="question10" required>
+            <select id="quest10" class="form-control" id="question10" required>
               <option value="" selected disabled>Select an Option</option>
-              <option>1 (Strongly Disagree)</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5 (Strongly Agree)</option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
             </select>
           </div>
-          <!-- <input type="submit" class="form-control btn btn-primary" name="" value="Submit"><br> -->
-          <button type="button" id"submitSurvery" data-toggle="modal" data-target="#seeResults" class=" form-control btn btn-primary"><i class="fa fa-check-circle" aria-hidden="true"></i> Submit</button>
+          <button type="button" id="submitSurvey"  class=" form-control btn btn-primary"><i class="fa fa-check-circle" aria-hidden="true"></i> Submit</button>
         </form>
       </div>
     </div>
@@ -199,7 +207,7 @@
 
 <!-- Survey Results in Modal  -->
 
-  <div class="modal fade" id="seeResults" tabindex="-1" role="dialog">
+  <div class="modal fade" id="seeResult" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -209,7 +217,8 @@
         </button>
       </div>
       <div class="modal-body">
- <!-- populated by survey.js  -->
+        <h1 id="result-name"></h1>
+        <img id="result-img" src="" alt="">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
@@ -220,18 +229,10 @@
   <footer class="footer">
     <div class="container">
       <p>
-        <a href="/api/EmployeeFinder">API Employee List</a>
+        <a href="/api/employees">API Employee List</a>
       </p>
     </div>
   </footer>
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  <script src="../server.js" charset="utf-8"></script>
 
 </body>
 
