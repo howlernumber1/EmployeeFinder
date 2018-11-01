@@ -20,8 +20,31 @@ module.exports = function(app) {
   });
 
   app.post('/api/employees', function(req, res) {
+    console.log(req.body);
+    const employeeMatch = function() {
 
-  employeeList.push(req.body);
-  res.end();
+      let totalDiff = 100;
+      let bestMatch;
+      let bestMatchPhoto;
+
+      for (let i = 0; i < employeeList[i].scores.length; i++) {
+
+        let matchScore;
+
+        for (let j = 0; j < array2.length; j++) {
+
+          matchScore += Math.abs(employeeList[j].scores - req.body[j].scores)
+
+          if (matchScore < totalDiff) {
+            totalDiff = matchScore;
+            bestMatch = employeeList[i];
+          }
+        }
+
+      }
+
+    };
+    employeeList.push(req.body);
+    res.end();
   })
 };
