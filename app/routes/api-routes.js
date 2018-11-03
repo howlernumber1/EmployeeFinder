@@ -20,31 +20,67 @@ module.exports = function(app) {
   });
 
   app.post('/api/employees', function(req, res) {
-    console.log(req.body);
-    const employeeMatch = function() {
+    let resArray = [];
+    let reqArray = [];
+    reqArray.push(req.body)
 
-      let totalDiff = 100;
-      let bestMatch;
-      let bestMatchPhoto;
+    // function for the difference calculation
+    const diffCalculation = function() {
 
-      for (let i = 0; i < employeeList[i].scores.length; i++) {
+      // outside loop on employee list array
+      employeeList.forEach(function(el1) {
 
-        let matchScore;
+        // declaring variables to hold results
+        let addVal = 0;
+        let addVal2 = 0;
+        let diff = 0;
 
-        for (let j = 0; j < array2.length; j++) {
-
-          matchScore += Math.abs(employeeList[j].scores - req.body[j].scores)
-
-          if (matchScore < totalDiff) {
-            totalDiff = matchScore;
-            bestMatch = employeeList[i];
-          }
+        // callback function for reduce to add values
+        let add = function(a, b) {
+          return parseInt(a) + parseInt(b);
         }
 
+        // inside loop for survey array
+        reqArray.forEach(function(el2) {
+
+          // run reduce function on each iteration for employee array and survey array
+          addVal = el1.scores.reduce(add, 0);
+          addVal2 = el2.scores.reduce(add, 0);
+
+          // after subtracting the values store the results in a variable
+          diff = Math.abs(addVal - addVal2)
+
+        });
+        // push the results to array3
+        resArray.push({
+          name: el1.name,
+          photo: el1.photo,
+          scores: diff
+        });
+      });
+    }
+    diffCalculation();
+
+    // function to find the lowest number in array.
+    // the lowest number will be the person with the least amount of difference to submited survey.
+    function findMinMax(arr) {
+      let min = arr[0].scores;
+
+      for (let i = 1, len = arr.length; i < len; i++) {
+        let v = arr[i].scores;
+        min = (v < min) ? arr[i] : min;
       }
 
+      return min;
     };
+
+    // store the results in a variable and pass that back as a response.
+    let match = findMinMax(resArray);
+    res.json(match);
+
+    //push survery results to employee list array
     employeeList.push(req.body);
+
     res.end();
   })
 };
